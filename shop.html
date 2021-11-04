@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Pusheen Home Page</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <style>
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .naV{
+        background-color: #ffeeed;
+        width: 100%;
+        height: 8em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .word{
+        font-family: 'Libre Franklin', sans-serif;
+        color: #50342b;
+      }
+
+      .img-logo{
+        width: 7em;
+        margin-top: -1.5em;
+      }
+
+      .nav-grid{
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        column-gap: 10px;
+        position: absolute;
+        margin-left: 38em;
+        margin-top: 2em;
+      }
+
+      .img-nav{
+        width: 2em;
+        height: 2em;
+      }
+
+      .active{
+        color: #ebb7be;
+      }
+
+      .nav-link:hover{
+        color: #ebb7be;
+      }
+
+      hr{
+        border-style: solid;
+        border-color: #50342b;
+        border-width: 0.5px;
+        width: 70em;
+      }
+
+      .tab{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .about{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 70em;
+      }
+
+      .img-carousel{
+      width: 50em; 
+      height: 30em;
+      }
+
+      p{
+        width: 50em;
+        text-align: center;
+      }
+
+      .video-grid{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 1.5em;
+      }
+
+      .flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer{
+        background-color: #ffeeed;
+        width: 100%;
+        height: 13em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .footer-grid{
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        column-gap: 10px;
+        margin: 20px;
+      }
+
+      .navbar{
+        width: 70em;
+        height: 10em;
+        background-color: #ffc48b;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        column-gap: 5em;
+      }
+
+      .img-event{
+        width: 5.5em;
+      }
+
+      .product-grid{
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        row-gap: 3em;
+        column-gap: 2em;
+      }
+    </style>
+
+  </head>
+  <body>
+    <!-- Nav -->
+    <div class="naV">
+      <h1 class="word">Pusheen The Cat</h1>
+      <img src="/image/pusheen-logo.gif" alt="logo" class="img-logo">
+      <!-- icon nav -->
+      <div class="nav-grid">
+        <img src="/image/serach.png" alt="serach" class="img-nav">
+        <img src="/image/cart.png" alt="cart" class="img-nav">
+        <img src="/image/user.png" alt="user" class="img-nav">
+      </div>
+    </div>
+    <br><br>
+    <!-- tab -->
+    <div class="tab">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link word" aria-current="page" href="./home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#" >Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link word" href="./comic.html" >Comics</a>
+        </li>
+      </ul>
+      <br>
+      <hr>
+    </div>
+    <!-- body -->
+    <div class="about">
+      <!-- halloween -->
+      <nav class="navbar navbar-light">
+        <div class="flex">
+          <img src="/image/hallow1.gif" alt="hallow1" style="width: 8em;">
+        </div>
+        <div class="container-fluid flex">
+          <span class="navbar-brand mb-0 h1" style="color: #50342b;">Discover Halloween Goodies</span>
+          <span class="h1" style="color: #cc0000;">1 Oct - 31 Oct</span>
+        </div>
+        <div class="flex">
+          <img src="/image/hallow2.gif" alt="hallow1" style="width: 10em;">
+        </div>
+      </nav>
+      <br>
+      <!-- christmas -->
+      <nav class="navbar navbar-light" style="background-color: #fcf0e4;">
+        <div class="flex">
+          <img src="/image/chis2.gif" alt="chis2" style="width: 9em;">
+        </div>
+        <div class="container-fluid flex">
+          <span class="navbar-brand mb-0 h1" style="color: #50342b;">Discover Christmas Goodies</span>
+          <span class="h1" style="color: #cc0000;">1 Dec - 31 Dec</span>
+        </div>
+        <div class="flex">
+          <img src="/image/chis1.gif" alt="chis1" style="width: 9em;">
+        </div>
+      </nav>
+    </div>
+    <hr>
+    <br>
+    <!-- product -->
+    <div>
+      <h2 class="word" style="text-align: center;">Pusheen Products</h2>
+      <br>
+      <div class="product-grid">
+        <div class="card" style="width: 18rem;">
+          <img src="/image/pro1.png" class="card-img-top" alt="pro1">
+          <div class="card-body flex" style="padding: 0; padding-top: 10px; flex-direction: column;">
+            <p class="card-text word" style="width: 18rem;">Pusheen Hey Cap</p>
+            <span class="card-text word">500 THB</span>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="/image/pro2.png" class="card-img-top" alt="pro1">
+          <div class="card-body flex" style="padding: 0; padding-top: 10px; flex-direction: column;">
+            <p class="card-text word" style="width: 18rem;">Pusheen Puffy Bubble Sticker Sheet</p>
+            <p class="card-text word">120 THB</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="/image/pro3.png" class="card-img-top" alt="pro1">
+          <div class="card-body flex" style="padding: 0; padding-top: 10px; flex-direction: column;">
+            <p class="card-text word" style="width: 18rem;">Pusheen Pencil Case</p>
+            <p class="card-text word">350 THB</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="/image/pro4.png" class="card-img-top" alt="pro1">
+          <div class="card-body flex" style="padding: 0; padding-top: 10px; flex-direction: column;">
+            <p class="card-text word" style="width: 18rem;">Deluxe Sitting Pusheen Plush</p>
+            <p class="card-text word">2,700 THB</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="/image/pro5.png" class="card-img-top" alt="pro1">
+          <div class="card-body flex" style="padding: 0; padding-top: 10px; flex-direction: column;">
+            <p class="card-text word" style="width: 18rem;">Pusheen Surprise Plush: Catfé</p>
+            <p class="card-text word">300 THB</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="/image/pro6.png" class="card-img-top" alt="pro1">
+          <div class="card-body flex" style="padding: 0; padding-top: 10px; flex-direction: column;">
+            <p class="card-text word" style="width: 18rem;">Pusheen Unisex Kigurumi</p>
+            <p class="card-text word">1,600 THB</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="/image/pro7.jpeg" class="card-img-top" alt="pro7">
+          <div class="card-body flex" style="padding: 0; padding-top: 10px; flex-direction: column;">
+            <p class="card-text word" style="width: 18rem;">Suspicious Pusheen Knit Hat</p>
+            <p class="card-text word">550 THB</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="/image/pro8.jpeg" class="card-img-top" alt="pro1">
+          <div class="card-body flex" style="padding: 0; padding-top: 10px; flex-direction: column;">
+            <p class="card-text word" style="width: 18rem;">Pusheen & Sloth Just Vibing Mouse Pad</p>
+            <p class="card-text word">399 THB</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="/image/pro9.jpeg" class="card-img-top" alt="pro1">
+          <div class="card-body flex" style="padding: 0; padding-top: 10px; flex-direction: column;">
+            <p class="card-text word" style="width: 18rem;">Pusheen Sweet Treats Pin Set</p>
+            <p class="card-text word">350 THB</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <br><br>
+    <!-- Pagination -->
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <span class="page-link">Previous</span>
+        </li>
+        <li class="page-item active"><a class="page-link">1</a></li>
+        <li class="page-item" aria-current="page">
+          <span class="page-link">2</span>
+        </li>
+        <li class="page-item"><a class="page-link">3</a></li>
+        <li class="page-item">
+          <a class="page-link">Next</a>
+        </li>
+      </ul>
+    </nav>
+    <br>
+    <!-- footer -->
+    <div class="footer">
+      <div class="flex">
+        <h3 class="word">Pusheen The Cat</h3>
+        <img src="/image/footer-img.gif" alt="footer-img" style="width: 4.5em; margin-left: 10px;">
+      </div>
+      <hr style="margin: 10px;">
+      <div class="footer-grid">
+        <img src="/image/instagram.png" alt="instagram" class="img-nav">
+        <img src="/image/facebook.png" alt="facebook" class="img-nav">
+        <img src="/image/twitter.png" alt="twitter" class="img-nav">
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>

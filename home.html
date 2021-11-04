@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Pusheen Home Page</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <style>
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .naV{
+        background-color: #ffeeed;
+        width: 100%;
+        height: 8em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .word{
+        font-family: 'Libre Franklin', sans-serif;
+        color: #50342b;
+      }
+
+      .img-logo{
+        width: 7em;
+        margin-top: -1.5em;
+      }
+
+      .nav-grid{
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        column-gap: 10px;
+        position: absolute;
+        margin-left: 38em;
+        margin-top: 2em;
+      }
+
+      .img-nav{
+        width: 2em;
+        height: 2em;
+      }
+
+      .active{
+        color: #ebb7be;
+      }
+
+      .nav-link:hover{
+        color: #ebb7be;
+      }
+
+      hr{
+        border-style: solid;
+        border-color: #50342b;
+        border-width: 0.5px;
+        width: 70em;
+      }
+
+      .tab{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .about{
+        background-color: #e9f7f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 70em;
+      }
+
+      .img-carousel{
+      width: 50em; 
+      height: 30em;
+      }
+
+      p{
+        width: 50em;
+        text-align: center;
+      }
+
+      .video-grid{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 1.5em;
+      }
+
+      .flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer{
+        background-color: #ffeeed;
+        width: 100%;
+        height: 13em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .footer-grid{
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        column-gap: 10px;
+        margin: 20px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <!-- Nav -->
+    <div class="naV">
+      <h1 class="word">Pusheen The Cat</h1>
+      <img src="/image/pusheen-logo.gif" alt="logo" class="img-logo">
+      <!-- icon nav -->
+      <div class="nav-grid">
+        <img src="/image/serach.png" alt="serach" class="img-nav">
+        <img src="/image/cart.png" alt="cart" class="img-nav">
+        <img src="/image/user.png" alt="user" class="img-nav">
+      </div>
+    </div>
+    <br><br>
+    <!-- tab -->
+    <div class="tab">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link word" href="./shop.html" >Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link word" href="./comic.html" >Comics</a>
+        </li>
+      </ul>
+      <br>
+      <hr>
+    </div>
+    <!-- body -->
+    <div class="about">
+      <!-- carousel -->
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin: 20px;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/image/pic0.jpeg" class="d-block img-carousel" alt="pic1">
+          </div>
+          <div class="carousel-item">
+            <img src="/image/pic2.jpeg" class="d-block img-carousel" alt="pic2">
+          </div>
+          <div class="carousel-item">
+            <img src="/image/pic3.png" class="d-block img-carousel" alt="pic3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <br><br>
+      <!-- paragraph -->
+      <h2 class="word">About</h2>
+      <p class="word">Pusheen is a tubby tabby cat who brings smiles and laughter to people all around the world. She became famous through her animated comics and GIFs posted on Pusheen.com, as well as through her widely used animated stickers on Facebook, Instagram, iMessage, and other platforms.</p>
+      <br><br>
+      <!-- video -->
+      <div class="video-grid">
+        <iframe width="520" height="275" src="https://www.youtube.com/embed/QVCZOzcEj2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="520" height="275" src="https://www.youtube.com/embed/_6cOAcMrcQo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <br><br>
+      <!-- paragraph -->
+      <h2 class="word">About Pusheen Corp.</h2>
+      <p class="word">Pusheen Corp. is an Illinois-based company dedicated to bringing smiles to the faces of fans around the world. Founded in 2010, Pusheen Corp. develops Pusheen content and products, working with more than 100 licensees globally. Pusheen herself made her first appearance online in a 2010 short series of comics by Creator/Founder Claire Belton written together with Co-Founder, Andrew Duff. That project, Everyday Cute, quickly spun off into the original Pusheen.com Tumblr blog. Within a short period of time, the comics and GIFs posted to Tumblr became a viral sensation, with images of Pusheen being shared across the internet hundreds of thousands of times every week.</p>
+      <br><br>
+    </div>
+    <br>
+    <!-- footer -->
+    <div class="footer">
+      <div class="flex">
+        <h3 class="word">Pusheen The Cat</h3>
+        <img src="/image/footer-img.gif" alt="footer-img" style="width: 4.5em; margin-left: 10px;">
+      </div>
+      <hr style="margin: 10px;">
+      <div class="footer-grid">
+        <img src="/image/instagram.png" alt="instagram" class="img-nav">
+        <img src="/image/facebook.png" alt="facebook" class="img-nav">
+        <img src="/image/twitter.png" alt="twitter" class="img-nav">
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
