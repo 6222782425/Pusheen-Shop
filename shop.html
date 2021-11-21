@@ -7,10 +7,13 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Pusheen Home Page</title>
+    <link rel="shortcut icon" href="image/footer-img.gif">
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <!-- CSS -->
     <style>
       body{
@@ -26,6 +29,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        margin-left: -10em;
       }
 
       .word{
@@ -43,16 +48,17 @@
         grid-template-columns: 33.3% 33.3% 33.3%;
         column-gap: 10px;
         position: absolute;
-        margin-left: 38em;
+        margin-left: 68%;
         margin-top: 2em;
       }
 
       .img-nav{
         width: 2em;
         height: 2em;
+        margin-top: 10px;
       }
 
-      .active{
+      .word-active{
         color: #ebb7be;
       }
 
@@ -72,6 +78,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-top: 7em;
       }
 
       .about{
@@ -126,7 +133,7 @@
         height: 10em;
         background-color: #ffc48b;
         display: grid;
-        grid-template-columns: 30% 30% 30%;
+        grid-template-columns: 25% 40% 25%;
         column-gap: 5em;
       }
 
@@ -140,10 +147,54 @@
         row-gap: 3em;
         column-gap: 2em;
       }
+
+      .btn-add{
+        background-color: #ffeeed;
+      }
+
+      .btn-add:hover{
+        background-color: #ebb7be;
+      }
+
+      .align-center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .chris-text{
+        font-family: 'Mountains of Christmas', cursive;
+        font-size: 2em;
+      }
+
+      .hallo-text{
+        font-family: 'Creepster', cursive;
+        font-size: 2em;
+      }
+
+      .noti{
+        background-color: #cc0000;
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        position: absolute;
+        font-size: 12px;
+        margin-left: 1.5em;
+        margin-top: 2px;
+        text-align: center;
+      }
+
+      .img-cart{
+        height: 15em;
+      }
+
+
     </style>
 
   </head>
+
   <body>
+    <div id="app">
     <!-- Nav -->
     <div class="naV">
       <h1 class="word">Pusheen The Cat</h1>
@@ -151,7 +202,10 @@
       <!-- icon nav -->
       <div class="nav-grid">
         <img src="/image/serach.png" alt="serach" class="img-nav">
-        <img src="/image/cart.png" alt="cart" class="img-nav">
+        <div>
+          <div v-if="countitem > 0" class="noti">{{ countitem }}</div>
+          <img src="/image/cart.png" alt="cart" class="img-nav" v-on:click="ShowMyCart">
+        </div>
         <img src="/image/user.png" alt="user" class="img-nav">
       </div>
     </div>
@@ -162,8 +216,8 @@
         <li class="nav-item">
           <a class="nav-link word" aria-current="page" href="./home.html">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#" >Shop</a>
+        <li class="nav-item" v-on:click="ShowHomePage">
+          <a class="nav-link word-active" href="#">Shop</a>
         </li>
         <li class="nav-item">
           <a class="nav-link word" href="./comic.html" >Comics</a>
@@ -173,14 +227,14 @@
       <hr>
     </div>
     <!-- body -->
-    <div class="about">
+    <div class="about" v-if="product_page">
       <!-- halloween -->
       <nav class="navbar navbar-light">
         <div class="flex">
           <img src="/image/hallow1.gif" alt="hallow1" style="width: 8em;">
         </div>
-        <div class="container-fluid flex">
-          <span class="navbar-brand mb-0 h1" style="color: #50342b;">Discover Halloween Goodies</span>
+        <div class="container-fluid align-center" style="justify-content: center">
+          <span class="navbar-brand mb-0 h1 hallo-text" style="color: #50342b;">Discover Halloween Goodies</span>
           <span class="h1" style="color: #cc0000;">1 Oct - 31 Oct</span>
         </div>
         <div class="flex">
@@ -193,22 +247,27 @@
         <div class="flex">
           <img src="/image/chis2.gif" alt="chis2" style="width: 9em;">
         </div>
-        <div class="container-fluid flex">
-          <span class="navbar-brand mb-0 h1" style="color: #50342b;">Discover Christmas Goodies</span>
+        <div class="container-fluid align-center" style="justify-content: center">
+          <span class="navbar-brand mb-0 h1 chris-text" style="color: #50342b;">Discover Christmas Goodies</span>
           <span class="h1" style="color: #cc0000;">1 Dec - 31 Dec</span>
         </div>
         <div class="flex">
           <img src="/image/chis1.gif" alt="chis1" style="width: 9em;">
         </div>
       </nav>
+      <hr>
     </div>
-    <hr>
     <br>
     <!-- product -->
-    <div>
-      <h2 class="word" style="text-align: center;">Pusheen Products</h2>
-      <br>
-      <div class="product-grid">
+      <div v-if="product_page">
+        <h2 class="word" style="text-align: center;">Pusheen Products</h2>
+        <br>
+        <div class="product-grid">
+          <Product v-on:add-item="addItem" v-for="product in products" :product="product" :key="product.id" />
+        </div>
+      </div>
+      
+      <!-- <div class="product-grid">
         <div class="card" style="width: 18rem;">
           <img src="/image/pro1.png" class="card-img-top" alt="pro1">
           <div class="card-body flex" style="padding: 0; padding-top: 10px; flex-direction: column;">
@@ -271,9 +330,9 @@
             <p class="card-text word" style="width: 18rem;">Pusheen & Sloth Just Vibing Mouse Pad</p>
             <p class="card-text word">399 THB</p>
           </div>
-        </div>
+        </div> -->
 
-        <div class="card" style="width: 18rem;">
+        <!-- <div class="card" style="width: 18rem;">
           <img src="/image/pro9.jpeg" class="card-img-top" alt="pro1">
           <div class="card-body flex" style="padding: 0; padding-top: 10px; flex-direction: column;">
             <p class="card-text word" style="width: 18rem;">Pusheen Sweet Treats Pin Set</p>
@@ -281,26 +340,57 @@
           </div>
         </div>
 
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
     <br><br>
     <!-- Pagination -->
-    <nav aria-label="...">
-      <ul class="pagination">
-        <li class="page-item disabled">
-          <span class="page-link">Previous</span>
-        </li>
-        <li class="page-item active"><a class="page-link">1</a></li>
-        <li class="page-item" aria-current="page">
-          <span class="page-link">2</span>
-        </li>
-        <li class="page-item"><a class="page-link">3</a></li>
-        <li class="page-item">
-          <a class="page-link">Next</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="align-center" v-if="product_page">
+      <nav aria-label="..." >
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <span class="page-link" style="color:#50342b;">Previous</span>
+          </li>
+          <li class="page-item" aria-current="page">
+            <span class="page-link" style="background-color:#ebb7be; color: white;">1</span>
+          </li>
+          <li class="page-item" aria-current="page">
+            <span class="page-link" style="color:#ebb7be;">2</span>
+          </li>
+          <li class="page-item"><a class="page-link"  style="color:#ebb7be;">3</a></li>
+          <li class="page-item">
+            <a class="page-link" style="color:#50342b;">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- if cart -->
+    <div v-if="cart_page">
+      <h2 class="word" style="text-align: center; margin-top: -1em;">Cart</h2>
+        <br>
+      <hr/>
+      <br>
+        <div>
+          <div class="row">
+            <div class="col-4" style="text-align: center;">PRODUCT</div>
+            <div class="col-3" style="text-align: center;">NAME</div>
+            <div class="col-2" style="text-align: center;">PRICE</div>
+            <div class="col-2" style="text-align: center;">QUANTITY</div>
+            <div class="col" style="text-align: center;"></div>
+          </div>
+          <CartItem v-for="item in cart" :item="item" :key="item.id" v-on:remove-item="removeItem"/>
+        </div>
+        <div class="align-center" style="justify-content: flex-end;">
+          <div style="padding: 50px;">
+            Total: {{countTotalPrice}}
+          </div>
+          <button type="button" class="btn" style="background-color: #ebb7be;">Check out</button>
+        </div>
+        
+      </div>
+  </div>
     <br>
+
     <!-- footer -->
     <div class="footer">
       <div class="flex">
@@ -315,6 +405,219 @@
       </div>
     </div>
 
+    <!-- product-template -->
+    <template id="product-template">
+      <div class="product-grid">
+        <div class="card" style="width: 18rem;">
+          <img :src="product.url" class="card-img-top" :alt="product.id">
+          <div class="card-body flex" style="padding: 0; padding-top: 10px; flex-direction: column;">
+            <p class="card-text word" style="width: 18rem;">{{product.name}}</p>
+            <span class="card-text word">{{product.price}} THB</span>
+            <button @click="addToCart()" class="btn btn-block word btn-add" style="margin: 10px">
+              <strong>Add To Cart</strong>
+            </button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- cartitem-template -->
+    <template id="cartitem-template">
+      <div v-if="item.count > 0">
+        <div class="row" style="margin-top: 3em;">
+          <div class="col-4 align-center">
+            <img :src="item.url" class="img-cart" :alt="item.id">
+          </div>
+          <div class="col-3 align-center">
+            <span class="card-text word">{{item.name}}</span>
+          </div>
+          <div class="col-2 align-center">
+            <span class="card-text word">{{item.price}} THB</span>
+          </div>
+          <div class="col-2 align-center">
+            <span class="card-text word">{{item.count}}</span>
+          </div>
+          <div class="col align-center">
+            <img src="/image/bin.png" alt="bin" style="width: 1.5em; height: 1.5em" @click="removeFromCart()">
+          </div>
+        </div>
+        <!-- <div>{{item.name}} - {{item.count}}</div> -->
+      </div>
+      <!-- <div v-else-if="!item.count">
+        <h1>No product in cart</h1>
+      </div> -->
+  </template>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      let app = Vue.createApp({
+
+        data: function() {
+          return {
+              
+              product_page: true,
+              cart_page: false,
+
+              products: [{
+                  id: 1,
+                  name: "Pusheen Hey Cap",
+                  price: 500,
+                  shortdesc: "Best Drip in the Market",
+                  url: "/image/pro1.png"
+              }, {
+                  id: 2,
+                  name: "Pusheen Puffy Bubble Sticker Sheet",
+                  price: 120,
+                  shortdesc: "Classy, Stylish, Dope",
+                  url: "/image/pro2.png"
+              }, {
+                  id: 3,
+                  name: "Pusheen Pencil Case",
+                  price: 350,
+                  shortdesc: "Elegance built in",
+                  url: "/image/pro3.png"
+              }, {
+                  id: 4,
+                  name: "Deluxe Sitting Pusheen Plush",
+                  price: 2700,
+                  shortdesc: "Sleek, Trendy, Clean",
+                  url: "/image/pro4.png"
+              }, {
+                  id: 5,
+                  name: "Pusheen Surprise Plush: Catfé",
+                  price: 300,
+                  shortdesc: "Fabulous, Exotic, Classy",
+                  url: "/image/pro5.png"
+              }, {
+                  id: 6,
+                  name: "Pusheen Unisex Kigurumi",
+                  price: 1600,
+                  shortdesc: "Neat, Sleek, Smart",
+                  url: "/image/pro6.png"
+              }, {
+                  id: 7,
+                  name: "Suspicious Pusheen Knit Hat",
+                  price: 550,
+                  shortdesc: "Neat, Sleek, Smart",
+                  url: "/image/pro7.jpeg"
+              }, {
+                  id: 8,
+                  name: "Pusheen & Sloth Just Vibing Mouse Pad",
+                  price: 399,
+                  shortdesc: "Neat, Sleek, Smart",
+                  url: "/image/pro8.jpeg"
+              }, {
+                  id: 9,
+                  name: "Pusheen Sweet Treats Pin Set",
+                  price: 350,
+                  shortdesc: "Neat, Sleek, Smart",
+                  url: "/image/pro9.jpeg"
+              }],
+
+              cart: [],
+
+          }
+        },
+        mounted: function() {
+
+        },
+
+        methods: {
+            addItem: function(id) {
+                console.log(this.products)
+                console.log(id)
+                
+                //Check if this product already in the cart
+                item = this.cart.find(product => product.id == id)
+
+                if (item) { // if this product already in the cart
+                    item.count += 1
+                } else {
+                    item = this.products.find(product => product.id == id)
+                    this.cart.push({
+                        id: item.id,
+                        name: item.name,
+                        url: item.url,
+                        price: item.price,
+                        total: item.price,
+                        count: 1
+                    })
+                }
+                console.log(this.cart)
+            },
+
+            removeItem: function(id){
+              item = this.cart.find(product => product.id == id)
+              if(item){
+                item.count -= 1
+                const index = this.cart.indexOf(item)
+                if (index > -1) {
+                  this.cart.splice(index, 1)
+                }
+              }
+              console.log("cart: "+this.cart)
+            },
+
+            ShowMyCart: function() {
+                this.cart_page = true
+                this.product_page = false
+            },
+
+            ShowHomePage: function() {
+                this.product_page = true
+                this.cart_page = false
+            }
+        },
+
+        computed: {
+            countitem: function() {
+                var total = 0
+                for (i in this.cart) {
+                    total += this.cart[i].count
+                }
+                return total
+            },
+            countTotalPrice: function(){
+              var total = 0
+                for (i in this.cart) {
+                    total += this.cart[i].total
+                }
+                return total
+            }
+        }
+      })
+
+      app.component('Product', {
+        data: function() {
+            return {}
+        },
+        props: ['product'],
+        template: "#product-template",
+
+        methods: {
+            addToCart: function() {
+                this.$emit("add-item", this.product.id)
+            }
+          },
+      });
+
+      app.component('Cartitem', {
+        data: function() {
+          return {}
+      },
+        props: ['item'],
+        template: '#cartitem-template',
+        methods: {
+          removeFromCart: function() {
+              this.$emit("remove-item", this.item.id)
+          }
+        },
+      });
+
+      app.mount("#app")
+    </script>
   </body>
 </html>
+
